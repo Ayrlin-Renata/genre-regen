@@ -13,7 +13,7 @@ function randomizer() {
 	for (var i = (rN(2) + 2); i > 0; i--) {
 		str += randGenre() + ((i != 1)? " " : "");
 	}
-	if(rN(2) == 1) {
+	if(rN(3) == 1) {
 		str += randType();
 	}
 	$('#out').val(str);
