@@ -1,9 +1,9 @@
 
-var genres = ['history','science','fantasy','atom','solar','apocalypse','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro','romance','sword','goth','dungeon','zombie','western','sitcom','modern','far-future','future'];
-var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric ','low ','soft-','hard-','raygun-','bio-','hero-','villain-','comedic '];
+var genres = ['history','science','fantasy','atom','solar','apocalypse','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro','romance','sword','goth','dungeon','zombie','western','sitcom','modern','far-future','future','medieval','drama','mystery','realism','fairy tale','superhero','satire','parody','crime','naval','sports','highschool','magical-girl','mecha','adventure','action','flick','gun','martial arts','musical','slasher','spy'];
+var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric ','low ','soft-','hard-','raygun-','bio-','comedic ','techno-','non-','epic ','heroic ','speculative ','xeno-','disaster ','folk '];
 var affixes = ['punk','-fiction',' thriller','-opera'];
 var feels = ['noblebright ','bright ','grimbright ','noble ','grim ','nobledark ','dark ','grimdark '];
-var types = [' anthrology',' trilogy',' series',' comic',' movie',' book',' visual novel',' documentary',' webcomic',' webnovel',' manga',' anime'];
+var types = [' anthrology',' trilogy',' series',' comic',' movie',' book',' visual novel',' documentary',' webcomic',' webnovel',' manga',' anime',' audiobook', 'novel'];
 
 var used = [];
 
