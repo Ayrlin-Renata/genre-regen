@@ -10,7 +10,7 @@ var used = [];
 function randomizer() {
 	used = [];
 	var str = "";
-	for (var i = (rN(2) + 2); i > 0; i--) {
+	for (var i = (rN(1) + 2); i > 0; i--) {
 		str += randGenre() + ((i != 1)? " " : "");
 	}
 	if(rN(3) == 1) {
