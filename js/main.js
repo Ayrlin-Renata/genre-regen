@@ -1,6 +1,6 @@
 
 var genres = ['history','science','fantasy','atom','solar','apocalyptic','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro'];
-var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric '];
+var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric ','low ','soft-','hard-'];
 var affixes = ['punk','fiction',' thriller'];
 var feels = ['noblebright','bright','grimbright','noble','grim','nobledark','dark','grimdark'];
 
