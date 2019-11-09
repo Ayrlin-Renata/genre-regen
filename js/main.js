@@ -3,14 +3,14 @@ var genres = ['history','science','fantasy','atom','solar','apocalypse','scarcit
 var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric ','low ','soft-','hard-','raygun-','bio-','hero-','villain-','comedic '];
 var affixes = ['punk','-fiction',' thriller','-opera'];
 var feels = ['noblebright ','bright ','grimbright ','noble ','grim ','nobledark ','dark ','grimdark '];
-var types = [' anthrology',' trilogy',' series',' comic',' movie',' book',' visual novel',' documentary',' webcomic','webnovel','manga','anime'];
+var types = [' anthrology',' trilogy',' series',' comic',' movie',' book',' visual novel',' documentary',' webcomic',' webnovel',' manga',' anime'];
 
 var used = [];
 
 function randomizer() {
 	used = [];
 	var str = "";
-	for (var i = (rN(3) + 2); i > 0; i--) {
+	for (var i = (rN(2) + 2); i > 0; i--) {
 		str += randGenre() + ((i != 1)? " " : "");
 	}
 	if(rN(2) == 1) {
