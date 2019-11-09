@@ -2,13 +2,14 @@
 var genres = ['history','science','fantasy','atom','solar','apocalyptic','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro'];
 var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric '];
 var affixes = ['punk','fiction',' thriller'];
+var feels = ['noblebright','bright','grimbright','noble','grim','nobledark','dark','grimdark'];
 
 var used = [];
 
 function randomizer() {
 	used = [];
 	var str = "";
-	for (var i = 0; i < (rN(4) + 1); i++) {
+	for (var i = 0; i < (rN(3) + 2); i++) {
 		str += randGenre() + " ";
 	}
 	$('#out').val(str);
@@ -23,8 +24,11 @@ function randGenre() {
 	if(rN(3) == 1){ //prechance
 		gen = randPre() + gen;
 	}
-	if(rN(3) == 1){ //postchance
+	if(rN(4) == 1){ //postchance
 		gen = gen + randAf();
+	}
+	if(rN(5) == 1){ //feelchance
+		gen = randFeel() + gen;
 	}
 	return gen;
 }
@@ -35,6 +39,10 @@ function randPre() {
 
 function randAf(){
 	return affixes[Math.floor(Math.random()*affixes.length)];
+}
+
+function randFeel(){
+	return feels[Math.floor(Math.random()*feels.length)];
 }
 
 function rN(c) {
