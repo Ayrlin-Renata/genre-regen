@@ -1,7 +1,7 @@
 
-var genres = ['history','science','fantasy','atom','solar','apocalypse','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro','romance','sword','goth','dungeon','zombie','western','sitcom','modern','far-future','future','medieval','drama','mystery','realism','fairy tale','superhero','satire','parody','crime','naval','sports','highschool','magical-girl','mecha','adventure','action','flick','gun','martial arts','musical','slasher','spy'];
+var genres = ['history','science','fantasy','nuclear','solar','apocalypse','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro','romance','sword','goth','dungeon','zombie','western','sitcom','modern','far-future','future','medieval','drama','mystery','realism','fairy tale','superhero','satire','parody','crime','naval','sports','highschool','magical','mecha','adventure','action','gun','martial arts','musical','slasher','spy'];
 var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric ','low ','soft-','hard-','raygun-','bio-','comedic ','techno-','non-','epic ','heroic ','speculative ','xeno-','disaster ','folk '];
-var affixes = ['punk','-fiction',' thriller','-opera'];
+var affixes = ['punk','-fiction',' thriller','-opera','-fact','-futurism','-myth','-fantasy','-girl',' flick'];
 var feels = ['noblebright ','bright ','grimbright ','noble ','grim ','nobledark ','dark ','grimdark '];
 var types = [' anthrology',' trilogy',' series',' comic',' movie',' book',' visual novel',' documentary',' webcomic',' webnovel',' manga',' anime',' audiobook', ' novel'];
 
@@ -14,6 +14,9 @@ var max = 3;
 function randomizer() {
 	used = [];
 	var str = "";
+	if(rN(5) == 1) {
+		str += randFeel();
+	}
 	for (var i = (rN(max-min) + min); i > 0; i--) {
 		str += randGenre() + ((i != 1)? " " : "");
 	}
@@ -34,9 +37,6 @@ function randGenre() {
 	}
 	if(rN(4) == 1){ //postchance
 		gen = gen + randAf();
-	}
-	if(rN(5) == 1){ //feelchance
-		gen = randFeel() + gen;
 	}
 	return gen;
 }
@@ -104,20 +104,20 @@ function fillTable() {
 	for(var i = 0; i < longest; i++) {
 		var row = tbody.insertRow(-1);
 		var cell = row.insertCell(0);
+		if(i < feels.length) { //feels
+			cell.innerText = feels[i];
+		}
+		cell = row.insertCell(1);
 		if(i < prefixes.length) { //prefixes
 			cell.innerHTML = prefixes[i]; // + "<button class=\"btn\" onclick=\"prefixes.splice(prefixes.indexOf(\'" + prefixes[i] + "\'))\">x</button>";
 		}
-		cell = row.insertCell(1);
+		cell = row.insertCell(2);
 		if(i < genres.length) { //genres
 			cell.innerText = genres[i];
 		}
-		cell = row.insertCell(2);
+		cell = row.insertCell(3);
 		if(i < affixes.length) { //affixes
 			cell.innerText = affixes[i];
-		}
-		cell = row.insertCell(3);
-		if(i < feels.length) { //feels
-			cell.innerText = feels[i];
 		}
 		cell = row.insertCell(4);
 		if(i < types.length) { //types
