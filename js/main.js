@@ -1,7 +1,7 @@
 
-var genres = ['history','science','fantasy','atom','solar','apocalypse','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro','romance','sword','goth','dungeon','zombie','western','sitcom'];
+var genres = ['history','science','fantasy','atom','solar','apocalypse','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro','romance','sword','goth','dungeon','zombie','western','sitcom','modern','far-future','future'];
 var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric ','low ','soft-','hard-','raygun-','bio-','hero-','villain-','comedic '];
-var affixes = ['punk','fiction',' thriller',' anthrology',' trilogy'];
+var affixes = ['punk','fiction',' thriller',' anthrology',' trilogy','-opera'];
 var feels = ['noblebright ','bright ','grimbright ','noble ','grim ','nobledark ','dark ','grimdark '];
 
 var used = [];
