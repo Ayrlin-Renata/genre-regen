@@ -1,7 +1,7 @@
 
-var genres = ['history','science','fantasy','atom','solar','apocalyptic','scarcity','dystopia','utopia'];
-var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-'];
-var affixes = ['punk','fiction'];
+var genres = ['history','science','fantasy','atom','solar','apocalyptic','scarcity','dystopia','utopia','steam','diesel','horror','military'];
+var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban '];
+var affixes = ['punk','fiction',' thriller'];
 
 var used = [];
 
