@@ -1,6 +1,6 @@
 
 var genres = ['history','science','fantasy','atom','solar','apocalyptic','scarcity','dystopia','utopia'];
-var prefixes = ['pre-','alt-','high ','anti-','post-'];
+var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-'];
 var affixes = ['punk','fiction'];
 
 var used = [];
