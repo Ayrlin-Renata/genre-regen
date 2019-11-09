@@ -1,0 +1,21 @@
+.c-white {
+	color: #eeeeee;
+}
+
+.bgc-gray1 {
+	background-color: #111111;
+}
+.bgc-gray2 {
+	background-color: #222222;
+}
+
+.form-control, .input-group, body {
+	background-color: #111111 !important;
+	color: #eeeeee !important;
+}
+
+.btn {
+	background-color: #222222 !important;
+	color: #eeeeee !important;
+	border-color: #ced4da;
+}
