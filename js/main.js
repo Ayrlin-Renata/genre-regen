@@ -1,16 +1,20 @@
 
 var genres = ['history','science','fantasy','atom','solar','apocalypse','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro','romance','sword','goth','dungeon','zombie','western','sitcom','modern','far-future','future'];
 var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric ','low ','soft-','hard-','raygun-','bio-','hero-','villain-','comedic '];
-var affixes = ['punk','fiction',' thriller',' anthrology',' trilogy','-opera'];
+var affixes = ['punk','-fiction',' thriller','-opera'];
 var feels = ['noblebright ','bright ','grimbright ','noble ','grim ','nobledark ','dark ','grimdark '];
+var types = [' anthrology',' trilogy',' series', ' comic', ' movie', ' book', ' visual novel', ' documentary'];
 
 var used = [];
 
 function randomizer() {
 	used = [];
 	var str = "";
-	for (var i = 0; i < (rN(3) + 2); i++) {
-		str += randGenre() + " ";
+	for (var i = (rN(3) + 2); i > 0; i--) {
+		str += randGenre() + ((i != 1)? " " : "");
+	}
+	if(rN(2) == 1) {
+		str += randType();
 	}
 	$('#out').val(str);
 }
@@ -43,6 +47,10 @@ function randAf(){
 
 function randFeel(){
 	return feels[Math.floor(Math.random()*feels.length)];
+}
+
+function randType(){
+	return types[Math.floor(Math.random()*types.length)];
 }
 
 function rN(c) {
