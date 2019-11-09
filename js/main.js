@@ -7,10 +7,14 @@ var types = [' anthrology',' trilogy',' series',' comic',' movie',' book',' visu
 
 var used = [];
 
+var min = 2;
+var max = 3;
+
+//called on randomize
 function randomizer() {
 	used = [];
 	var str = "";
-	for (var i = (rN(1) + 2); i > 0; i--) {
+	for (var i = (rN(max-min) + min); i > 0; i--) {
 		str += randGenre() + ((i != 1)? " " : "");
 	}
 	if(rN(3) == 1) {
@@ -57,6 +61,83 @@ function rN(c) {
 	return Math.floor(Math.random() * (c + 1));
 }
 
+//called on copy
+function copy() {
+	var copyText = $('#out')[0];
+
+	copyText.select(); 
+	copyText.setSelectionRange(0, 99999); 
+
+	document.execCommand("copy");
+}
+
+//called on min
+function minCall() {
+	var maxput = $('#max')[0];
+	var minput = $('#min')[0];
+	var theNewMin = Math.floor(Number.parseInt($(minput).val()).clamp(1,Number.parseInt($(maxput).val())));
+	$(minput).val(theNewMin);
+	min = theNewMin;
+}
+
+//called on max
+function maxCall() {
+	var maxput = $('#max')[0];
+	var minput = $('#min')[0];
+	var theNewMax = Math.floor(Number.parseInt($(maxput).val()).clamp(Number.parseInt($(minput).val()),16));
+	$(maxput).val(theNewMax);
+	max = theNewMax;
+}
+
+//ready
 $(document).ready(function() {
 	randomizer();
+	fillTable();
 });
+
+//filltable
+function fillTable() {
+	var tab = $('#pooldata')[0];
+	var tbody = $('#pooldata > tbody')[0];
+	var longest = Math.max(prefixes.length,Math.max(genres.length,Math.max(affixes.length,Math.max(feels.length,types.length))));
+	
+	for(var i = 0; i < longest; i++) {
+		var row = tbody.insertRow(-1);
+		var cell = row.insertCell(0);
+		if(i < prefixes.length) { //prefixes
+			cell.innerHTML = prefixes[i]; // + "<button class=\"btn\" onclick=\"prefixes.splice(prefixes.indexOf(\'" + prefixes[i] + "\'))\">x</button>";
+		}
+		cell = row.insertCell(1);
+		if(i < genres.length) { //genres
+			cell.innerText = genres[i];
+		}
+		cell = row.insertCell(2);
+		if(i < affixes.length) { //affixes
+			cell.innerText = affixes[i];
+		}
+		cell = row.insertCell(3);
+		if(i < feels.length) { //feels
+			cell.innerText = feels[i];
+		}
+		cell = row.insertCell(4);
+		if(i < types.length) { //types
+			cell.innerText = types[i];
+		}
+	}
+}
+
+//util
+/**
+ * Returns a number whose value is limited to the given range.
+ *
+ * Example: limit the output of this computation to between 0 and 255
+ * (x * 255).clamp(0, 255)
+ *
+ * @param {Number} min The lower boundary of the output range
+ * @param {Number} max The upper boundary of the output range
+ * @returns A number in the range [min, max]
+ * @type Number
+ */
+Number.prototype.clamp = function(min, max) {
+  return Math.min(Math.max(this, min), max);
+};
