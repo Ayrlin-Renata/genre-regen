@@ -8,7 +8,7 @@ var types = [' anthrology',' trilogy',' series',' comic',' movie',' book',' visu
 var used = [];
 
 var min = 2;
-var max = 3;
+var max = 2;
 
 //called on randomize
 function randomizer() {
