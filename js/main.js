@@ -1,4 +1,4 @@
-
+//ok, this is terrible but like this wasnt meant to be a respectable tool with an actual featureset when i made it first. And yeah im too lazy to fix it.
 var genres = ['history','science','fantasy','nuclear','solar','apocalypse','scarcity','dystopia','utopia','steam','diesel','horror','space','military','retro','romance','sword','goth','dungeon','zombie','western','sitcom','modern','far-future','future','medieval','drama','mystery','realism','fairy-tale','superhero','satire','parody','crime','naval','sports','highschool','magical','mecha','adventure','action','gun','martial-arts','musical','slasher','spy','eldritch'];
 var prefixes = ['pre-','alt-','high ','anti-','post-','cyber-','urban ','prehistoric ','low ','soft-','hard-','raygun-','bio-','comedic ','techno-','non-','epic ','heroic ','speculative ','xeno-','disaster ','folk ','lovecraftian '];
 var affixes = ['punk','-fiction',' thriller','-opera','-fact','-futurism','-myth','-fantasy','-girl',' flick'];
@@ -24,6 +24,13 @@ function randomizer() {
 		str += randType();
 	}
 	$('#out').val(str);
+	
+	var hist = $('#history')[0];
+	var tbody = $('#history > tbody')[0];
+	var row = tbody.insertRow(-1);
+	var cell = row.insertCell(0);
+	cell.innerText = str;
+	tbody.scrollTop = 0;
 }
 
 function randGenre() {

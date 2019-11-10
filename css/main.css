@@ -35,14 +35,19 @@ body, thead, tbody, .btn, .form-control, .input-group, .input-group-text {
 
 }
 
-#pooldata {
+#pooldata tbody {
+	height: 18vh;
+}
 
+#history tbody {
+	height: 40vh;
+    display: flex;
+	flex-direction: column-reverse;
 }
 
 .tbody-scroll tbody {
 	display: block;
 	overflow: auto;
-	height: 60vh;
 	width: 100%;
 }
 .tbody-scroll tbody tr {
